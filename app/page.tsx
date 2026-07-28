@@ -674,12 +674,12 @@ ${rows}`;
         )}
         {showResultModal && gameOver && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 px-3 py-6 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/75 px-3 py-3 backdrop-blur-sm"
             role="dialog"
             aria-modal="true"
             aria-labelledby="result-heading"
           >
-            <div className="relative w-full max-w-md overflow-hidden rounded-3xl border-4 border-[#005EB8] bg-[#00152D] text-center shadow-2xl">
+            <div className="relative my-auto w-full max-w-md max-h-[96vh] overflow-y-auto rounded-3xl border-4 border-[#005EB8] bg-[#00152D] text-center shadow-2xl">
               {/* Decorative top stripe */}
               <div className="h-2 bg-[#F76900]" />
 
@@ -692,7 +692,7 @@ ${rows}`;
                 ×
               </button>
 
-              <div className="px-5 pb-6 pt-5 sm:px-7">
+              <div className="px-5 pb-4 pt-4 sm:px-7">
                 {/* Result heading */}
                 <p className="college text-sm uppercase tracking-[0.3em] text-[#0088FF]">
                   {hasWon ? "Final Result" : "Game Over"}
@@ -700,13 +700,13 @@ ${rows}`;
 
                 <h2
                   id="result-heading"
-                  className="varsity mt-1 text-5xl tracking-wider text-[#F76900] [text-shadow:0_2px_0_#00152D,0_3px_5px_rgba(0,0,0,0.5)] sm:text-6xl"
+                  className="varsity mt-1 text-4xl tracking-wider text-[#F76900] [text-shadow:0_2px_0_#00152D,0_3px_5px_rgba(0,0,0,0.5)] sm:text-5xl"
                 >
                   {hasWon ? "YOU WON" : "NICE TRY"}
                 </h2>
 
                 {/* Answer logo */}
-                <div className="mx-auto mt-4 flex h-36 w-36 items-center justify-center rounded-2xl border-4 border-[#005EB8] bg-[#E8D3A9] p-5 shadow-xl">
+                <div className="mx-auto mt-3 flex h-28 w-28 sm:h-32 sm:w-32 items-center justify-center rounded-2xl border-4 border-[#005EB8] bg-[#E8D3A9] p-5 shadow-xl">
                   <img
                     src={targetTeam.logoUrl}
                     alt={`${targetTeam.name} logo`}
@@ -716,7 +716,7 @@ ${rows}`;
                 </div>
 
                 {/* Answer */}
-                <p className="mt-4 text-xl font-extrabold text-[#F5E6C8] sm:text-2xl">
+                <p className="mt-3 text-xl font-extrabold text-[#F5E6C8] sm:text-2xl">
                   {targetTeam.name}
                 </p>
 
@@ -742,7 +742,7 @@ ${rows}`;
                 )}
 
                 {/* Emoji preview */}
-                <div className="mx-auto mt-5 max-w-xs rounded-2xl border border-[#005EB8]/50 bg-black/20 p-3">
+                <div className="mx-auto mt-4 max-w-xs rounded-2xl border border-[#005EB8]/50 bg-black/20 p-3">
                   <div className="space-y-1 text-center text-lg leading-none">
                     {guesses
                       .slice()
@@ -768,7 +768,7 @@ ${rows}`;
                 </div>
 
                 {/* Copy / Share */}
-                <div className="mt-5 grid grid-cols-2 gap-3">
+                <div className="mt-4 grid grid-cols-2 gap-3">
                   <button
                     onClick={shareResult}
                     className={`rounded-lg py-3 text-base font-extrabold uppercase tracking-wide text-white shadow-lg transition sm:text-lg ${
