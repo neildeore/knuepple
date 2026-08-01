@@ -2,7 +2,7 @@ import { Team } from "../data/teams";
 
 export type GameMode = "daily" | "random";
 
-const START_DATE = "2026-01-01";
+const START_DATE = "2026-08-01";
 const TIME_ZONE = "America/New_York";
 
 function getDateKey(date = new Date()) {
