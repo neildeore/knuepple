@@ -532,7 +532,7 @@ ${rows}`;
         <div className="relative mb-2 text-center">
           {gameMode === "daily" && (
             <p className="college absolute right-4 top-2 text-lg tracking-widest text-[#F5E6C8] drop-shadow-[0_3px_0_#001A33]">
-              PUZZLE {currentPuzzleNumber}
+              GAME {currentPuzzleNumber}
             </p>
           )}
           <p className="college text-base tracking-wider text-[#0088FF] sm:text-xl md:text-2xl drop-shadow-[0_3px_0_#7A5C34]">
@@ -544,8 +544,15 @@ ${rows}`;
           </h1>
 
           <p className="college mt-3 text-xs tracking-wider text-[#F5E6C8] drop-shadow-[0_3px_0_#001A33]">
-            {guessesRemaining}{" "}
-            {guessesRemaining === 1 ? "GUESS REMAINING" : "GUESSES REMAINING"}
+            {gameOver
+              ? `${guesses.length} ${
+                  guesses.length === 1 ? "GUESS" : "GUESSES"
+                } USED`
+              : `${Math.max(maxGuesses - guesses.length, 0)} ${
+                  Math.max(maxGuesses - guesses.length, 0) === 1
+                    ? "GUESS REMAINING"
+                    : "GUESSES REMAINING"
+                }`}
           </p>
         </div>
 
@@ -747,7 +754,7 @@ ${rows}`;
 
                 {gameMode === "daily" && (
                   <p className="college mt-1 text-sm tracking-widest text-[#0088FF]">
-                    PUZZLE {currentPuzzleNumber}
+                    GAME {currentPuzzleNumber}
                   </p>
                 )}
 
