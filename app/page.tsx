@@ -531,8 +531,8 @@ ${rows}`;
       <div className="mx-auto max-w-8xl">
         <div className="relative mb-2 text-center">
           {gameMode === "daily" && (
-            <p className="college absolute right-4 top-2 text-lg tracking-widest text-[#F5E6C8] drop-shadow-[0_3px_0_#001A33]">
-              GAME {currentPuzzleNumber}
+            <p className="college absolute right-4 top-2 text-lg tracking-wider text-[#F5E6C8] drop-shadow-[0_3px_0_#001A33]">
+              GAME#{currentPuzzleNumber}
             </p>
           )}
           <p className="college text-base tracking-wider text-[#0088FF] sm:text-xl md:text-2xl drop-shadow-[0_3px_0_#7A5C34]">
@@ -753,8 +753,8 @@ ${rows}`;
                 </p>
 
                 {gameMode === "daily" && (
-                  <p className="college mt-1 text-sm tracking-widest text-[#0088FF]">
-                    GAME {currentPuzzleNumber}
+                  <p className="college mt-1 text-sm tracking-wider text-[#0088FF]">
+                    GAME#{currentPuzzleNumber}
                   </p>
                 )}
 
