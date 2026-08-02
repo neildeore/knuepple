@@ -225,6 +225,17 @@ export default function Home() {
     currentStreak: 0,
     maxStreak: 0,
   });
+  useEffect(() => {
+    const saved = localStorage.getItem("knuepple-stats");
+
+    if (!saved) return;
+
+    try {
+      setStats(JSON.parse(saved));
+    } catch {
+      localStorage.removeItem("knuepple-stats");
+    }
+  }, []);
   const [gameMode, setGameMode] = useState<GameMode>("daily");
   const [randomTeam, setRandomTeam] = useState<Team>(() =>
     getRandomTeam(teams),
@@ -1066,6 +1077,11 @@ ${rows}`;
               </p>
 
               <p>
+                For Mascot, there are 7 types: Human, Animal, Bird, Bug, Mythic,
+                Natural, and Color.
+              </p>
+
+              <p>
                 For Colors, yellow means the guessed team shares 1 color with
                 the answer&apos;s 2 primary colors.
               </p>
@@ -1077,8 +1093,6 @@ ${rows}`;
               </p>
 
               <p>The Logo Hint unlocks after 4 guesses.</p>
-
-              <p>Teams change at midnight EST!</p>
             </div>
             <button
               onClick={closeHowToPlay}
