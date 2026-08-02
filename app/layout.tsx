@@ -12,9 +12,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Knuepple",
-  description: "Guess the NCAA basketball team",
+export const metadata = {
+  title: "Knuepple | Guess the Daily NCAA Basketball Team",
+  description:
+    "Play the daily NCAA men's basketball guessing game. Guess the Division I college basketball team using conference, colors, state, mascot, titles, and tournament history.",
 };
 
 export default function RootLayout({
